@@ -1,0 +1,115 @@
+<div class="placescontainer">
+  <div fxLayout="column" fxLayoutGap="2%">
+    <div fxFlex="20%">
+      <mat-nav-list fxLayout="row">
+        <mat-card fxFlex="22%">
+          <mat-card-content>
+            <h2 class="example-h2">SEARCH THIS PAGE</h2>
+          </mat-card-content>
+          <section class="example-section">
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Search By Activity">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </section>
+        </mat-card>
+        <mat-card class="result" fxFlex="22%">
+          <mat-card-content>
+            <h2 class="example-h2">Budget</h2>
+            <section class="example-section">
+              <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+            </section>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="result" fxFlex="22%">
+          <mat-card-content>
+            <h2 class="example-h2">DURATION</h2>
+            <section class="example-section">
+              <ng5-slider #slider [(value)]="minDate" [(highValue)]="maxDate" [options]="nights" (valueChange)="nightsa(slider.value)"></ng5-slider>
+            </section>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="result">
+          <mat-card-content>
+            <h2 class="example-h2">Hotel Category</h2>
+            <section class="example-section">
+              <mat-checkbox class="example-margin">
+                3-★
+              </mat-checkbox><BR>
+              <mat-checkbox class="example-margin">
+                4-★
+              </mat-checkbox><BR>
+              <mat-checkbox class="example-margin">
+                5-★
+              </mat-checkbox><BR>
+            </section>
+          </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="22%">
+          <mat-card-content>
+            <section>
+              <h2 style="text-align: center;">Filters</h2>
+              <mat-form-field appearance="outline" style="margin-top:-20px">
+                  
+                <mat-label style="font-size: 19px;font-weight:500">Filter Option</mat-label>
+                <mat-select #sorts (valueChange)="sort(sorts.value)">
+                  <mat-option value="phightolow">Price High-low</mat-option>
+                  <mat-option value="plowtohigh" >Price Low-High</mat-option>
+                  <mat-option value="dhightolow">Duration High-low</mat-option>
+                  <mat-option value="lowtohigh">Duration low-high</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+            </section>
+          </mat-card-content>
+        </mat-card>
+      </mat-nav-list>
+    </div>
+    <div fxLayout="column">
+      <div class="text4">Showing Results of Package in {{city}}<span style="font-weight: 500;font-size:19px"> (
+          {{result}} Results)</span></div>
+      <div fxLayout="row">
+        <div fxFlex="20%"></div>
+        <div fxFlex="80%" fxLayout="column" style="width: 70%;">
+          <mat-card *ngFor="let package of filterpackageArray" class="cardcontainer" fxLayoutGap="0%" fxFlex="100%">
+            <div fxLayout="row">
+              <div fxFlex="30%">
+                <app-image [image]="package.images"></app-image>
+              </div>
+              <div fxFlex="70%">
+                <mat-card-title class="model">{{package.agencyName}}</mat-card-title>
+                <div class="text2" fxLayout="row">
+                  <li style="list-style: none;">{{package.tourType}} Package</li>
+
+                </div>
+                <mat-card-subtitle>
+                </mat-card-subtitle>
+                <mat-list>
+                  <div style="display: inline-flex; ">
+                   
+                    <h4 style="margin-left: 20px;" class="text">Cost Per Person</h4>
+                    <h4 style="margin-left: 52px;" class="text1"> Rs {{package.costPerPerson}}</h4>
+                  </div>
+                  <br>
+                  <div style="display: inline-flex; ">
+                    
+                    <h4 style="margin-left: 20px;" class="text">Duration</h4>
+                    <h4 style="margin-left: 112px;" class="text1">{{package.noOfNights}} Nights</h4>
+                  </div>
+                  <br>
+                  <div style="display: inline-flex; ; ">
+                    
+                    <h4 style="margin-left: 20px;" class="text">Cancellation</h4>
+                    <h4 style="margin-left: 87px;" class="text1">Before 3 days from Travelling </h4>
+                  </div>
+                </mat-list>
+                <mat-card-actions >
+                  <button class="button1">BOOK NOW</button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>

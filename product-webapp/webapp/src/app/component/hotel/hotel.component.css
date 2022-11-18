@@ -1,0 +1,68 @@
+.hotelcontainer{
+    margin-top: 210px;
+   
+   
+}
+
+mat-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+mat-stepper{
+    background-color: rgb(209, 190, 225);
+   
+}
+/* .hotel{
+    background-image:src/assets/logo.jpg;
+    background-size: cover;
+} */
+.right {
+	
+	background: linear-gradient(212.38deg, rgba(61, 157, 248, 0.7) 0%, rgba(175, 70, 189, 0.71) 100%),url(src/assets/logo.png);
+	color: #fff;
+	background-repeat: no-repeat;
+	position: relative;
+	background-position: center;
+	
+}
+
+.right .right-text{
+  height: 100%;
+  margin-top: 150px;
+  position: relative;
+  transform: translate(0%, 45%);
+}
+.right-text h2{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+}
+.right-text h4{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.right .right-inductor{
+  position: absolute;
+  width: 70px;
+  height: 7px;
+  background: #fff0;
+  left: 50%;
+  bottom: 70px;
+  transform: translate(-50%, 0%);
+}
+mat-card{
+    overflow-x: hidden;
+    overflow-block: hidden;
+    background-color: rgb(120, 91, 146);
+}
+
+::ng-deep .mat-horizontal-stepper-content[aria-expanded="false"] {
+    width: 0px !important;
+  }

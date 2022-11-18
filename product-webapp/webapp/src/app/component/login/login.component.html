@@ -1,0 +1,67 @@
+
+<body>
+	<section class="login">
+		<div class="login_box">
+			<div class="right" >
+				<div class="right-text">
+					<h2>NIIT</h2>
+					<h4>TRAVEL PORTAL</h4>
+				</div>
+				<div class="right-inductor"><img
+						src="../assets/Black & White Minimalist Business Logo (2).png"
+						alt=""></div>
+			</div>
+			<div class="left">
+				<div class="top_link"><a href="#"><img
+							src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
+							alt="">Return home</a> 	</div>
+				<div class="contact">
+					
+					<div [formGroup]="loginForm">
+						<h3 style="font-weight: 500; color: #0052d4;">SIGN IN</h3>
+						<mat-radio-group fxLayout="row" fxLayoutGap="5%" formControlName="userRole">
+
+							<mat-radio-button value="USER" [checked]='true'>User</mat-radio-button>
+							<mat-radio-button value="SERVICEPROVIDER">Service Provider</mat-radio-button>
+
+						</mat-radio-group>
+						<input type="text" matInput formControlName="email" placeholder="USERNAME">
+						<mat-error *ngIf="loginForm.controls['email'].hasError('email')">Email is required
+						</mat-error>
+
+
+						<input type="password" matInput formControlName="password" placeholder="PASSWORD">
+						<mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+							Password is Required
+						</mat-error>
+						<mat-error *ngIf="loginForm.controls['password'].hasError('minLength')">
+							Minimum length is 6
+						</mat-error>
+						<mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')">
+							Minimum length is 15
+						</mat-error>
+
+
+
+						<button class="submit" [disabled]="loginForm.invalid" (click)="login()">Sign In</button>
+
+						
+
+						<div fxLayout="row" fxLayoutGap="2%" style="margin-top:30px; ">
+							<div (click)="open()" style="font-weight: 500; ">Forgot Password</div>
+							
+								<a class="text2" style="font-size: 22px; font-weight:500; color:rgb(55, 43, 226);"
+									href="register">SignUp</a>
+								<asl-google-signin-button *ngIf="!user1" ></asl-google-signin-button>
+								<button onclick="FBlogin()"><img src="https://cdn.freebiesupply.com/logos/large/2x/facebook-2-logo-svg-vector.svg" alt="facebook" width="10" ></button>
+							
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+</body>

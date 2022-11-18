@@ -1,0 +1,38 @@
+<div class="placescontainer">
+  <h1 class="text">Showing Famous Places of {{city}} <span style="font-weight: 500;font-size:19px"> ({{result}} Results)</span></h1>
+ <mat-card  *ngFor="let place of placeArray" fxLayout="row">
+  <div fxFlex="30%" class="image">
+   <app-image [image]="place.image"></app-image>
+  </div>
+  <div>
+     <mat-card-title ><mat-icon style="color: rgb(255, 0, 0);"> edit_location</mat-icon><u>{{place.place}}</u></mat-card-title>
+     <h4> <mat-card-subtitle class="text">{{place.city}}</mat-card-subtitle></h4>
+     <ul  >
+       <img mat-card-xsm-image  src="https://static.vecteezy.com/system/resources/thumbnails/003/355/389/small/five-5-star-rank-sign-illustration-free-vector.jpg" height="20px" >
+       <mat-card-subtitle >1,312    REVIEWS</mat-card-subtitle>
+       <div fxLayout="column">
+         <mat-card-subtitle class="text2">
+           <div >{{place.description}}</div>
+         </mat-card-subtitle>
+        Things to do<h3 *ngFor="let x of place.thingToDo"> <b>{{x}}</b> </h3>
+       <mat-icon>query_builder</mat-icon>
+       <h4 >Timings: {{place.timings}
+          </h4>
+          <mat-icon>room</mat-icon>
+       <h4 >Near By Places: {{place.nearByPlaces}}
+          </h4>
+          <mat-icon>perm_device_information</mat-icon>
+       <h4 >Ticket type: {{place.ticketType}
+          </h4>
+          <mat-icon>language</mat-icon>
+       <h4 >How To Reach: {{place.howToReach}}
+          </h4>
+   </div>
+       <mat-card-actions align="end">
+           <button mat-button style="border-radius: 10px; background-color: yellow;border: 1px solid black;"><b>Check availability</b></button>
+       </mat-card-actions>
+       </ul>
+      </div>
+ </mat-card>
+ </div>
+       <br>
